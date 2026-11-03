@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://caflk6jxg5r88"]
+
+[ext_resource type="PackedScene" uid="uid://uhtbgpu15a07" path="res://scene-system-demo/player.tscn" id="1_88gup"]
+[ext_resource type="Texture2D" uid="uid://bc7rrmm2h1owt" path="res://scene-system-demo/assets/sprites/tilemap_packed.png" id="1_bisa2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(15, 12)
+
+[node name="Room" type="Node2D" unique_id=16695015]
+
+[node name="Ground" type="Sprite2D" parent="." unique_id=1575497244]
+position = Vector2(964.99994, 539)
+scale = Vector2(121, 67)
+texture = ExtResource("1_bisa2")
+region_enabled = true
+region_rect = Rect2(0, 64, 16, 16)
+
+[node name="Player" parent="." unique_id=1959803989 instance=ExtResource("1_88gup")]
+position = Vector2(960, 680)
+
+[node name="Anvil" type="StaticBody2D" parent="." unique_id=2057932940]
+position = Vector2(1000, 500)
+scale = Vector2(10, 10)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Anvil" unique_id=1970607746]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Anvil" unique_id=614158456]
+texture = ExtResource("1_bisa2")
+region_enabled = true
+region_rect = Rect2(32, 96, 16, 16)
+
+[node name="Chest" type="StaticBody2D" parent="." unique_id=411251181]
+position = Vector2(1670, 750)
+scale = Vector2(10, 10)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Chest" unique_id=260670092]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="Chest" unique_id=1047353122]
+texture = ExtResource("1_bisa2")
+region_enabled = true
+region_rect = Rect2(80, 112, 16, 16)
