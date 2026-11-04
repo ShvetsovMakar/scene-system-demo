@@ -4,11 +4,12 @@ extends CharacterBody2D
 @export var speed = 200.0
 var facing_direction = "down"
 
+
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 
-	direction.x = Input.get_axis("move_left", "move_right")
-	direction.y = Input.get_axis("move_up", "move_down")
+	direction.x = Input.get_axis("walk_left", "walk_right")
+	direction.y = Input.get_axis("walk_up", "walk_down")
 
 	direction = direction.normalized()
 	if direction != Vector2.ZERO:
