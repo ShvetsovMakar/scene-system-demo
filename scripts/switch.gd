@@ -1,5 +1,7 @@
 extends Area2D
 
+@export var interaction_data: InteractionData
+
 var player_in_range = false
 var is_activated = false
 signal state_changed(is_activated: bool)
@@ -7,7 +9,7 @@ signal state_changed(is_activated: bool)
 
 func _ready() -> void:
 	pass
-
+	
 
 func _process(delta: float) -> void:
 	if player_in_range and Input.is_action_just_pressed("interact"):

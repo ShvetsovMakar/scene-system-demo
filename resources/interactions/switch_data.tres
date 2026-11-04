@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InteractionData" format=3 uid="uid://cbcg0h8b3cug2"]
+
+[ext_resource type="Script" uid="uid://l6sxbfiltiwy" path="res://scene-system-demo/scripts/interaction_data.gd" id="1_3sf8a"]
+
+[resource]
+script = ExtResource("1_3sf8a")
+display_name = "Ancient Switch"
+description = "An old mechanism covered in runes."
+interaction_text = "Press E to activate"
+metadata/_custom_type_script = "uid://l6sxbfiltiwy"
