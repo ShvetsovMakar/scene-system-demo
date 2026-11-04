@@ -85,6 +85,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(160, 159)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
+size = Vector2(162, 159)
+
 [node name="Room" type="Node2D" unique_id=16695015]
 script = ExtResource("1_jms3s")
 
@@ -96,7 +99,7 @@ region_enabled = true
 region_rect = Rect2(0, 64, 16, 16)
 
 [node name="Switch" type="Area2D" parent="." unique_id=1446833016]
-position = Vector2(567, 767)
+position = Vector2(567, 867)
 script = ExtResource("3_j71au")
 
 [node name="Sprite2D" type="Sprite2D" parent="Switch" unique_id=962927704]
@@ -109,7 +112,7 @@ region_rect = Rect2(80, 160, 16, 16)
 shape = SubResource("CapsuleShape2D_p37mu")
 
 [node name="Anvil" type="StaticBody2D" parent="." unique_id=2057932940]
-position = Vector2(1000, 400)
+position = Vector2(1000, 336)
 scale = Vector2(10, 10)
 collision_layer = 2
 
@@ -123,7 +126,7 @@ region_enabled = true
 region_rect = Rect2(32, 96, 16, 16)
 
 [node name="Chest" type="StaticBody2D" parent="." unique_id=411251181]
-position = Vector2(1467, 450)
+position = Vector2(1367, 342)
 scale = Vector2(10, 10)
 collision_layer = 2
 
@@ -136,19 +139,237 @@ texture = ExtResource("2_jgclp")
 region_enabled = true
 region_rect = Rect2(80, 112, 16, 16)
 
-[node name="Door" type="StaticBody2D" parent="." unique_id=1881019641]
+[node name="Building" type="Node2D" parent="." unique_id=369839094]
+
+[node name="Door" type="StaticBody2D" parent="Building" unique_id=1881019641]
 position = Vector2(1267, 667)
 collision_layer = 2
 script = ExtResource("4_jgclp")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Door" unique_id=1099587634]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Building/Door" unique_id=1099587634]
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"open"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door" unique_id=649549504]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Door" unique_id=649549504]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Wall1" type="StaticBody2D" parent="Building" unique_id=388749539]
+position = Vector2(1107, 667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall1" unique_id=223042881]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall1" unique_id=310935697]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall2" type="StaticBody2D" parent="Building" unique_id=1779408668]
+position = Vector2(947, 667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall2" unique_id=49383901]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall2" unique_id=1543714299]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall3" type="StaticBody2D" parent="Building" unique_id=448939128]
+position = Vector2(787, 667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall3" unique_id=692241781]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(16, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall3" unique_id=228974920]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall4" type="StaticBody2D" parent="Building" unique_id=1847047806]
+position = Vector2(1427, 667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall4" unique_id=1559681335]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall4" unique_id=2139128848]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall5" type="StaticBody2D" parent="Building" unique_id=1684706990]
+position = Vector2(1587, 667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall5" unique_id=1928295472]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall5" unique_id=109031938]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall6" type="StaticBody2D" parent="Building" unique_id=572504272]
+position = Vector2(1587, 667)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall6" unique_id=959796461]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall6" unique_id=154369085]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall7" type="StaticBody2D" parent="Building" unique_id=1764055766]
+position = Vector2(787, 507)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall7" unique_id=272325745]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall7" unique_id=2005929133]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall8" type="StaticBody2D" parent="Building" unique_id=1421840841]
+position = Vector2(787, 347)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall8" unique_id=129032853]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall8" unique_id=917816447]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall9" type="StaticBody2D" parent="Building" unique_id=1382270512]
+position = Vector2(1587, 507)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall9" unique_id=2113403477]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall9" unique_id=381535775]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall10" type="StaticBody2D" parent="Building" unique_id=788655007]
+position = Vector2(1587, 347)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall10" unique_id=1191836269]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(48, 16, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall10" unique_id=1669726627]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall11" type="StaticBody2D" parent="Building" unique_id=34679258]
+position = Vector2(1587, 187)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall11" unique_id=108688160]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(48, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall11" unique_id=2045913464]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall12" type="StaticBody2D" parent="Building" unique_id=109651849]
+position = Vector2(787, 187)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall12" unique_id=1514326039]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall12" unique_id=955922246]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall13" type="StaticBody2D" parent="Building" unique_id=417404530]
+position = Vector2(947, 187)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall13" unique_id=724296289]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall13" unique_id=1463039047]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall14" type="StaticBody2D" parent="Building" unique_id=633418509]
+position = Vector2(1107, 187)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall14" unique_id=868727858]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall14" unique_id=431647000]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall15" type="StaticBody2D" parent="Building" unique_id=591720199]
+position = Vector2(1267, 187)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall15" unique_id=2026848848]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall15" unique_id=896381537]
+shape = SubResource("RectangleShape2D_57qmd")
+
+[node name="Wall16" type="StaticBody2D" parent="Building" unique_id=1525757489]
+position = Vector2(1427, 187)
+collision_layer = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Building/Wall16" unique_id=395646588]
+scale = Vector2(10, 10)
+texture = ExtResource("2_jgclp")
+region_enabled = true
+region_rect = Rect2(32, 0, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall16" unique_id=1903266905]
+shape = SubResource("RectangleShape2D_57qmd")
 
 [node name="Player" parent="." unique_id=1959803989 instance=ExtResource("4_kkhnv")]
 position = Vector2(952.9999, 872)
