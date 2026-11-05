@@ -202,3 +202,5 @@ animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1802639765]
 shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1448116456]

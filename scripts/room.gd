@@ -9,6 +9,9 @@ func _ready() -> void:
 	
 	switch.state_changed.connect(_on_switch_state_changed)
 	$Building/Door/AnimatedSprite2D.animation_finished.connect(_on_door_animation_finished)
+	
+	for child in $Collectibles.get_children():
+		child.collected.connect(_on_collectible_collected)
 
 
 func _process(delta: float) -> void:
@@ -40,3 +43,8 @@ func _on_switch_state_changed(is_activated: bool) -> void:
 func _on_door_animation_finished() -> void:
 	$Building/Door/CollisionShape2D.set_deferred("disabled", $Switch.is_activated)
 	$Building/Door.is_animating = false
+	
+	
+func _on_collectible_collected(collectible: Node2D) -> void:
+	print(collectible)
+	collectible.queue_free()

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cv0urs1ynpjxo"]
+
+[ext_resource type="Script" uid="uid://bqbyw3dix1pxo" path="res://scene-system-demo/scripts/collectible.gd" id="1_w81t5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4v7s"]
+radius = 4.0
+height = 14.0
+
+[node name="Collectible" type="Area2D" unique_id=333888693]
+collision_layer = 2
+script = ExtResource("1_w81t5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=106632398]
+region_rect = Rect2(112, 144, 16, 16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=340308071]
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

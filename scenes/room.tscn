@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://cbcg0h8b3cug2" path="res://scene-system-demo/resources/interactions/switch_data.tres" id="4_j71au"]
 [ext_resource type="Script" uid="uid://dfnq5vrjfdhbj" path="res://scene-system-demo/scripts/door.gd" id="4_jgclp"]
 [ext_resource type="PackedScene" uid="uid://uhtbgpu15a07" path="res://scene-system-demo/scenes/player.tscn" id="4_kkhnv"]
+[ext_resource type="PackedScene" uid="uid://cv0urs1ynpjxo" path="res://scene-system-demo/scenes/collectible.tscn" id="7_2t5aq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j71au"]
 font = ExtResource("2_kkhnv")
@@ -97,6 +98,14 @@ size = Vector2(160, 159)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_57qmd"]
 size = Vector2(162, 159)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_njf5c"]
+atlas = ExtResource("2_jgclp")
+region = Rect2(112, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hw8rl"]
+atlas = ExtResource("2_jgclp")
+region = Rect2(144, 144, 16, 16)
+
 [node name="Room" type="Node2D" unique_id=16695015]
 script = ExtResource("1_jms3s")
 
@@ -117,8 +126,8 @@ vertical_alignment = 1
 autowrap_trim_flags = 128
 
 [node name="Ground" type="Sprite2D" parent="." unique_id=1575497244]
-position = Vector2(964.99994, 539)
-scale = Vector2(121, 67)
+position = Vector2(735.00024, 425.49963)
+scale = Vector2(729.37506, 657.43744)
 texture = ExtResource("2_jgclp")
 region_enabled = true
 region_rect = Rect2(0, 64, 16, 16)
@@ -397,8 +406,20 @@ region_rect = Rect2(32, 0, 16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Building/Wall16" unique_id=1903266905]
 shape = SubResource("RectangleShape2D_57qmd")
 
+[node name="Collectibles" type="Node2D" parent="." unique_id=416233971]
+
+[node name="Potion" parent="Collectibles" unique_id=333888693 instance=ExtResource("7_2t5aq")]
+position = Vector2(999, 491)
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_njf5c")
+
+[node name="Hammer" parent="Collectibles" unique_id=1537463121 instance=ExtResource("7_2t5aq")]
+position = Vector2(1479, 891)
+scale = Vector2(10, 10)
+texture = SubResource("AtlasTexture_hw8rl")
+
 [node name="Player" parent="." unique_id=1959803989 instance=ExtResource("4_kkhnv")]
-position = Vector2(952.9999, 872)
+position = Vector2(1162, 933)
 scale = Vector2(0.99999994, 0.99999994)
 
 [connection signal="body_entered" from="Switch" to="Switch" method="_on_body_entered"]
