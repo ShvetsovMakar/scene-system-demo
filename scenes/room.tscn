@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://uhtbgpu15a07" path="res://scene-system-demo/scenes/player.tscn" id="4_kkhnv"]
 [ext_resource type="PackedScene" uid="uid://cv0urs1ynpjxo" path="res://scene-system-demo/scenes/collectible.tscn" id="7_2t5aq"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_8v2ha"]
+atlas = ExtResource("2_jgclp")
+region = Rect2(80, 128, 16, 16)
+
 [sub_resource type="LabelSettings" id="LabelSettings_j71au"]
 font = ExtResource("2_kkhnv")
 font_size = 128
@@ -108,6 +112,8 @@ region = Rect2(144, 144, 16, 16)
 
 [node name="Room" type="Node2D" unique_id=16695015]
 script = ExtResource("1_jms3s")
+collectible_scene = ExtResource("7_2t5aq")
+collectible_texture = SubResource("AtlasTexture_8v2ha")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=284206154]
 

@@ -3,6 +3,12 @@ extends Node2D
 @onready var interaction_label = $CanvasLayer/InteractionLabel
 @onready var switch = $Switch
 
+@export var collectible_scene: PackedScene
+@export var collectible_texture: Texture2D
+
+var can_spawn_collectible = true
+var spawned_collectible: Node2D
+
 func _ready() -> void:
 	switch.body_entered.connect(_on_switch_body_entered)
 	switch.body_exited.connect(_on_switch_body_exited)
@@ -15,8 +21,21 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	pass
-	
+	if Input.is_action_just_pressed("interact") and can_spawn_collectible:
+		can_spawn_collectible = false
+		
+		spawned_collectible = collectible_scene.instantiate()
+		spawned_collectible.texture = collectible_texture
+		spawned_collectible.scale = Vector2(10, 10)
+		$Collectibles.add_child(spawned_collectible)
+		spawned_collectible.position = Vector2(300, 200)
+		
+		spawned_collectible.collected.connect(_on_collectible_collected)
+		
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+		
+		
 func _on_switch_body_entered(body: Node2D) -> void:
 	if body == $Player:
 		interaction_label.visible = true
@@ -46,5 +65,8 @@ func _on_door_animation_finished() -> void:
 	
 	
 func _on_collectible_collected(collectible: Node2D) -> void:
-	print(collectible)
+	if collectible == spawned_collectible:
+		can_spawn_collectible = true
+		spawned_collectible = null
+		
 	collectible.queue_free()
